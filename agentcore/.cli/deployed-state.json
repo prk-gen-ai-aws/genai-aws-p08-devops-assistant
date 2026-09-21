@@ -1,0 +1,17 @@
+{
+  "targets": {
+    "default": {
+      "resources": {
+        "runtimes": {
+          "p08DevOpsAssistant": {
+            "runtimeId": "p08DevOpsAssistant_p08DevOpsAssistant-LWscS67usw",
+            "runtimeArn": "arn:aws:bedrock-agentcore:us-east-1:759802535955:runtime/p08DevOpsAssistant_p08DevOpsAssistant-LWscS67usw",
+            "roleArn": "arn:aws:iam::759802535955:role/AgentCore-p08DevOpsAssist-ApplicationAgentP08DevOps-xuzpL0LSOESz"
+          }
+        },
+        "stackName": "AgentCore-p08DevOpsAssistant-default",
+        "deployHash": "05271f51aa0c00d7"
+      }
+    }
+  }
+}
