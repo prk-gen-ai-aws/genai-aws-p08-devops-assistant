@@ -227,9 +227,20 @@ def send_alert(subject: str, message: str, severity: str = 'INFO'):
 # ── Lambda Handler ────────────────────────────────────────────
 
 def lambda_handler(event, context):
-    """Route to the correct tool based on action parameter."""
-    action = event.get('action')
+    """Route to correct tool.
+    Gateway sends: event = inputSchema properties (e.g. {"function_name": "..."}),
+    tool name in context.client_context.custom["bedrockAgentCoreToolName"]
+    Direct invocation sends: event = {"action": "tool_name", ...args}
+    """
 
+    # Gateway invocation: get tool name from context
+    action = event.get('action')  # direct invocation
+    if not action and context.client_context and context.client_context.custom:
+        tool_full = context.client_context.custom.get('bedrockAgentCoreToolName', '')
+        delimiter = '___'
+        if delimiter in tool_full:
+            action = tool_full[tool_full.index(delimiter) + len(delimiter):]
+    
     try:
         if action == 'get_cloudwatch_logs':
             result = get_cloudwatch_logs(
