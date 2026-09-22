@@ -1,6 +1,0 @@
-{
-  "gateway_id": "p08devopsgateway-sivyq78u0i",
-  "gateway_url": "https://p08devopsgateway-sivyq78u0i.gateway.bedrock-agentcore.us-east-1.amazonaws.com/mcp",
-  "target_id": "XAJYNXVMAI",
-  "lambda_arn": "arn:aws:lambda:us-east-1:759802535955:function:p08-ph1-devops-assistant-dev-tools"
-}

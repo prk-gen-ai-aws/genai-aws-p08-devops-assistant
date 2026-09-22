@@ -10,3 +10,8 @@ agentcore/cdk/node_modules/
 agentcore/cdk/cdk.out/
 agentcore/cdk/dist/
 *.zip
+gateway_config.json
+setup_gateway_p08.py
+agentcore/aws-targets.json
+agentcore/.cli/
+agentcore/cdk/cdk.out/

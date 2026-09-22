@@ -8,7 +8,12 @@ import uuid
 import time
 import sys
 
-RUNTIME_ARN = 'arn:aws:bedrock-agentcore:us-east-1:759802535955:runtime/p08DevOpsAssistant_p08DevOpsAssistant-LWscS67usw'
+import os
+from dotenv import load_dotenv
+load_dotenv()
+RUNTIME_ARN = os.getenv('AGENTCORE_RUNTIME_ARN', '')
+if not RUNTIME_ARN:
+    raise ValueError('AGENTCORE_RUNTIME_ARN not set in .env')
 REGION      = 'us-east-1'
 
 client = boto3.client('bedrock-agentcore', region_name=REGION)
