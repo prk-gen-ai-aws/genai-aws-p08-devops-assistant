@@ -240,6 +240,11 @@ def lambda_handler(event, context):
         delimiter = '___'
         if delimiter in tool_full:
             action = tool_full[tool_full.index(delimiter) + len(delimiter):]
+        # print(f'INVOKE_PATH: MCP_GATEWAY action={action}')  # uncomment to verify MCP path
+    # elif action:
+    #     print(f'INVOKE_PATH: DIRECT action={action}')
+    # else:
+    #     print(f'INVOKE_PATH: UNKNOWN event={str(event)[:100]}')
     
     try:
         if action == 'get_cloudwatch_logs':
